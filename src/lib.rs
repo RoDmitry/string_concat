@@ -24,7 +24,7 @@ macro_rules! string_concat_impl {
     }};
     ([$($ident:ident)*] $x:expr $(, $rest:expr)*) => {
         let ref x = $x;
-        string_concat_impl!{[$($ident)* x] $($rest),*}
+        $crate::string_concat_impl!{[$($ident)* x] $($rest),*}
     };
 }
 
